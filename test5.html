@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect for Twitter Bots or Real Users</title>
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="player">
+    <meta name="twitter:title" content="Watch This Video">
+    <meta name="twitter:description" content="Click to watch the full video on Twitter!">
+    <meta name="twitter:image" content="https://example.com/thumbnail.jpg"> <!-- Thumbnail image URL -->
+    <meta name="twitter:player" content="https://x.com/i/status/1885197159051477462">
+    <meta name="twitter:player:width" content="640">
+    <meta name="twitter:player:height" content="360">
+
+    <script>
+        // Check if the page is being visited by a Twitter bot or a real user
+        if (document.referrer.indexOf("twitter.com") !== -1) {
+            // If the referrer is from Twitter, we know it's a Twitter preview bot or user.
+            // Redirect Twitter preview bot to a video tweet URL
+            window.location.href = "https://x.com/i/status/1885197159051477462"; // Replace with your video tweet URL
+        } else {
+            // If it's a real user, redirect them to the desired website
+            setTimeout(function() {
+                window.location.href = "https://www.google.com"; // Replace with your website URL
+            }, 3000); // Redirect after 3 seconds
+        }
+    </script>
+
+</head>
+<body>
+
+    <h2>If you are a real user, you will be redirected to a website shortly...</h2>
+    <p>If you're seeing this page from Twitter, you'll be redirected to a video tweet.</p>
+
+    <!-- Just for demonstration, the page will show a message for users and Twitter bots -->
+    <div id="content">
+        <iframe width="640" height="360" src="https://x.com/i/status/1885197159051477462" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+</body>
+</html>
