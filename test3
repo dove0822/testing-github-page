@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect and Promote</title>
+
+    <!-- Twitter Player Card Meta Tags for YouTube Video -->
+    <meta name="twitter:card" content="player">
+    <meta name="twitter:title" content="Watch This Amazing YouTube Video">
+    <meta name="twitter:description" content="Click to watch the full video on YouTube!">
+    <meta name="twitter:image" content="https://example.com/thumbnail.jpg">  <!-- Thumbnail image URL -->
+    <meta name="twitter:player" content="https://www.youtube.com/embed/4BryEJtMN7I">
+    <meta name="twitter:player:width" content="640">
+    <meta name="twitter:player:height" content="360">
+
+    <script>
+        // Check if the referrer is Twitter or if it's a real user visiting the page
+        if (document.referrer.indexOf("twitter.com") !== -1) {
+            // If the visitor is from Twitter, the Twitter bot will see the video preview.
+            // It will not perform the redirect for Twitter bots.
+        } else {
+            // If it's a real user, redirect them to the link you want to promote.
+            setTimeout(function() {
+                window.location.href = "https://www.google.com"; // Replace with your target URL
+            }, 3000); // Redirect after 3 seconds
+        }
+    </script>
+</head>
+<body>
+
+    <h2>If you are a real user, you'll be redirected to a special offer shortly...</h2>
+    <p>If you're seeing this page on Twitter, you'll see the video below.</p>
+
+    <!-- Just for demonstration, the page will show a message or video depending on the user -->
+    <div id="content">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/4BryEJtMN7I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+</body>
+</html>
